@@ -117,7 +117,7 @@ ggplotly(cancer_death_count_graph,
          tooltip = c("text","x"))
 ```
  
-```{r}
+```{r, fig.alt="Density graph displaying frequency of bike rentals in the Washington D.C. for casual and registered riders for weekdays and weekends for the purpose of seeing the differences in rental patterns by causal and registered riders."}
 weekend_bike_rental_graph <- Trips %>% 
   mutate(day_of_week = wday(sdate)) %>%
   mutate(weekend = ifelse(day_of_week == 1|day_of_week == 7, #if day_of_week is 1 or 7 then weekend is True
@@ -138,7 +138,7 @@ ggplotly(weekend_bike_rental_graph)
   2. Use animation to tell an interesting story with the `small_trains` dataset that contains data from the SNCF (National Society of French Railways). These are Tidy Tuesday data! Read more about it [here](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-02-26).
 
 
-```{r}
+```{r, fig.alt="Bar graph displaying number of SNCF trains late at departure by station over time for the purpose of seeing the change of late departures over time."}
 small_trains %>% 
   ggplot(aes(x = num_late_at_departure,
              y = departure_station)) +
@@ -159,7 +159,7 @@ small_trains %>%
   * Use the data you just made to create a static cumulative harvest area plot, with the areas filled with different colors for each variety and arranged (HINT: `fct_reorder()`) from most to least harvested weights (most on the bottom).  
   * Add animation to reveal the plot over date. Instead of having a legend, place the variety names directly on the graph (refer back to the tutorial for how to do this).
 
-```{r}
+```{r, fig.alt="Area graph displaying the daily harvest of different varieties of tomatoes in pounds over time for the purpose of seeing the differences in harvests for different varieties of tomatoes."}
 garden_harvest %>% 
   filter(vegetable == "tomatoes") %>% 
   group_by(date, variety) %>% 
@@ -180,7 +180,7 @@ garden_harvest %>%
        fill = "Tomato Variety")
 ```
 
-```{r}
+```{r, fig.alt="Area graph displaying the daily harvest of different varieties of tomatoes in pounds revealed over time for the purpose of seeing the differences in harvests for different varieties of tomatoes."}
 garden_harvest %>% 
   filter(vegetable == "tomatoes") %>% 
   group_by(date, variety) %>% 
@@ -225,7 +225,7 @@ mallorca_map <- get_stamenmap(
 )
 ```
 
-```{r}
+```{r, fig.alt="Terrain map of Lisa's bike ride in Mallorca colored by elevation and revealed over time for the purpose of seeing Lisa's route and where she stopped."}
 ggmap(mallorca_map) +
   geom_path(data = mallorca_bike_day7, 
              aes(x = lon, y = lat, color = ele),
@@ -254,7 +254,7 @@ panama_map <- get_stamenmap(
 )
 ```
 
-```{r}
+```{r, fig.alt="Terrain map of Heather's triathlon in Panama revealed over time for the purpose of seeing her path for each event."}
 ggmap(panama_map) +
   geom_path(data = triathlon, 
              aes(x = lon, y = lat),
@@ -296,7 +296,7 @@ census_pop_est_2018 <- read_csv("https://www.dropbox.com/s/6txwv3b4ng7pepe/us_ce
 states_map <- map_data("state")
 ```
 
-```{r}
+```{r, fig.alt="Map of the continental US with each state filled with cumulative Covid-19 cases per 10000 people revealed over time for the purpose of seeing which states end up having the largest cumulative cases and how cases rose in different parts of the country."}
 covid19_gganim <- covid19 %>% 
   filter(mday(date) == 15) %>%
   mutate(state = str_to_lower(state)) %>%
