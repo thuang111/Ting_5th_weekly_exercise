@@ -12,7 +12,7 @@ output:
 
 
 ```{r setup, include=FALSE}
-#knitr::opts_chunk$set(echo = TRUE, error=TRUE, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(echo = TRUE, error=TRUE, message=FALSE, warning=FALSE)
 ```
 
 ```{r libraries}
@@ -100,7 +100,7 @@ Once your repository is created, you should always open your **project** rather 
 
   1. Choose 2 graphs you have created for ANY assignment in this class and add interactivity using the `ggplotly()` function.
   
-```{r, fig.width=8, fig.alt="Bar graph displaying number of cancer deaths in the US in 1990 by type of cancer for the purpose of seeing which types of cancers caused the most and least deaths."}
+```{r, fig.width=10, fig.alt="Bar graph displaying number of cancer deaths in the US in 1990 by type of cancer for the purpose of seeing which types of cancers caused the most and least deaths."}
 cancer_death_count_graph <- cancer %>% 
   filter(Code == "USA") %>% 
   filter(Year == "1990") %>% 
@@ -158,7 +158,7 @@ anim_save("trains.gif")
 ```
 
 ```{r, echo=FALSE}
-knitr::include_graphics("trains.gif")
+#knitr::include_graphics("trains.gif")
 ```
 
 ## Garden data
@@ -218,7 +218,7 @@ anim_save("tomatoes.gif")
 ```
 
 ```{r, echo=FALSE}
-knitr::include_graphics("tomatoes.gif")
+#knitr::include_graphics("tomatoes.gif")
 ```
 
 ## Maps, animation, and movement!
@@ -262,7 +262,7 @@ anim_save("mallorca.gif")
 ```
 
 ```{r, echo=FALSE}
-knitr::include_graphics("mallorca.gif")
+#knitr::include_graphics("mallorca.gif")
 ```
   
   5. In this exercise, you get to meet Lisa's sister, Heather! She is a proud Mac grad, currently works as a Data Scientist where she uses R everyday, and for a few years (while still holding a full-time job) she was a pro triathlete. You are going to map one of her races. The data from each discipline of the Ironman 70.3 Pan Am championships, Panama is in a separate file - `panama_swim`, `panama_bike`, and `panama_run`. Create a similar map to the one you created with my cycling data. You will need to make some small changes: 1. combine the files putting them in swim, bike, run order (HINT: `bind_rows()`), 2. make the leading dot a different color depending on the event (for an extra challenge, make it a different image using `geom_image()!), 3. CHALLENGE (optional): color by speed, which you will need to compute on your own from the data. You can read Heather's race report [here](https://heatherlendway.com/2016/02/10/ironman-70-3-pan-american-championships-panama-race-report/). She is also in the Macalester Athletics [Hall of Fame](https://athletics.macalester.edu/honors/hall-of-fame/heather-lendway/184) and still has records at the pool. 
@@ -304,7 +304,7 @@ anim_save("triathlon.gif")
 ```
 
 ```{r, echo=FALSE}
-knitr::include_graphics("triathlon.gif")
+#knitr::include_graphics("triathlon.gif")
 ```
  
 ## COVID-19 data
@@ -352,14 +352,14 @@ anim_save("covid19.gif")
 ```
 
 ```{r, echo=FALSE}
-knitr::include_graphics("covid19.gif")
+#knitr::include_graphics("covid19.gif")
 ```
 
 ## Your first `shiny` app (for next week!)
 
   7. This app will also use the COVID data. Make sure you load that data and all the libraries you need in the `app.R` file you create. You should create a new project for the app, separate from the homework project. Below, you will post a link to the app that you publish on shinyapps.io. You will create an app to compare states' daily number of COVID cases per 100,000 over time. The x-axis will be date. You will have an input box where the user can choose which states to compare (`selectInput()`), a slider where the user can choose the date range, and a submit button to click once the user has chosen all states they're interested in comparing. The graph should display a different line for each state, with labels either on the graph or in a legend. Color can be used if needed. 
   
-Put the link to your app here: 
+Put the link to your app here: https://thuang111.shinyapps.io/covid_shiny_app/
   
 ## GitHub link
 
